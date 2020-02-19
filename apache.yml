@@ -1,0 +1,19 @@
+##Wrtitten By chetan Gote
+
+--- 
+   name: install and configure Apache
+   hosts: test1
+   become: yes
+
+   vars: 
+      Apache_port_value : 80
+   
+   tasks:
+   -name: Install the Apache
+      yum: yum install httpd -yes
+    
+   -name: Ensure the installed service is enabled and running
+   service:
+      name: yum status httpd
+
+

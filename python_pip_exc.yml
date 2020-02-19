@@ -1,0 +1,15 @@
+##Written By Chetan Gote
+---
+- hosts: test1
+  tasks:
+    - name: Install the latest vesrion of Docker
+      yum:
+        name: docker
+        state: latest
+    - name: Intall the latest version of Python-pip
+      yum:
+        name: python-pip
+        state: latest
+    - name: Install the latest version of Docker-compose from pip
+      pip:
+        name: docker-compose

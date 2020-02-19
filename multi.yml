@@ -1,0 +1,14 @@
+##Written by Chetan Gote
+---
+- hosts: test1
+  tasks:
+  - name: Copy multiple files in Ansible with different permissions
+    copy:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      mode: "{{item.mode}}"
+    with_items:
+      - { src: '/tmp/file1',dest: '/tmp/', mode: '0777'}
+      - { src: '/tmp/file2',dest: '/tmp/', mode: '0707'}
+      - { src: '/tmp/file3',dest: '/tmp/', mode: '0575'}
+  # more files here
